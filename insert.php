@@ -14,9 +14,10 @@
 	
 <?php
 /* Insert data from form submission */
+
 	
 		$sql="INSERT INTO crimeuserinput (firstname, lastname, state, date, crime, verdict, sentence)
-			VALUES ('$_POST[firstname]','$_POST[lastname]','$_POST[state]','$_POST[date]','$_POST[crime]','$_POST[verdict]','$_POST[sentence]')";
+			VALUES ('$_POST['firstname']','$_POST['lastname']','$_POST['state']','$_POST['date']','$_POST['crime']','$_POST[verdict]','$_POST[sentence]')";
 
 		if (!mysql_query($sql,$con))
 		{
