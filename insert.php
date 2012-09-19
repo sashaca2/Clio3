@@ -14,15 +14,18 @@
 	
 <?php
 /* Insert data from form submission */
-
+$fname=$_POST['firstname'];
+$lname=$_POST['lastname'];
+$state=$_POST['state'];
+$date=$_POST['date'];
+$crime=$_POST['crime'];
+$verdict=$_POST['verdict'];
+$sentence=$_POST['sentence'];
 	
 		$sql="INSERT INTO crimeuserinput (firstname, lastname, state, date, crime, verdict, sentence)
-			VALUES ('$_POST['firstname']','$_POST['lastname']','$_POST['state']','$_POST['date']','$_POST['crime']','$_POST[verdict]','$_POST[sentence]')";
+			VALUES ('".$fname."', '".$lname."', '".$state."', '".$date."', '".$crime."', '".$verdict."', '".$sentence."')";
 
-		if (!mysql_query($sql,$con))
-		{
-		die("Error: " . mysql_error());
-		}
+		mysql_query($sql) or die("Error: " . mysql_error());
 			echo "1 record added";
 		
 ?>
